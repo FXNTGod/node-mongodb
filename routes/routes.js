@@ -1,8 +1,9 @@
 const express = require('express')
-const routes = express.Router()
+const Produto = require('../models/Produto')
+const router = express.Router()
 
-router.get('/', function (req, res) {
-    res.json({})
+router.get('/', async function (req, res) {
+    res.json( await Produto.find())
 })
 
 module.exports = router
